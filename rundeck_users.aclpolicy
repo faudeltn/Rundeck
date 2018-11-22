@@ -1,0 +1,42 @@
+description: "Allow users in rundeck_users group to run, kill jobs, etc. in the project called specific-project-name"
+# They can also read the activity logs and view the nodes.
+context:
+  project: '.*'
+by:
+  group: rundeck_users
+for:
+  resource:
+    - equals:
+        kind: job
+      allow: [read, run, kill]
+    - equals:
+        kind: node
+      allow: [read]
+    - equals:
+        kind: event
+      allow: [read] # allow reading activity logs
+    - equals:
+        kind: 'adhoc'
+      allow: [read,run,kill]
+  adhoc:
+    - allow: [read,run,kill] # allow running/killing adhoc jobs
+  job:
+    - allow: [read,run,kill]
+  node:
+    - allow: [read,run] # allow read/run for nodes
+---
+context:
+  application: rundeck
+description: "Users in the 'rundeck_users' group can launch jobs in the project called specific-project-name but not edit them"
+for:
+  project:
+    - match:
+        name: '.*'
+      allow: [read]
+  system:
+    - match:
+        name: '.*'
+      allow: [read]
+by:
+  group:
+    - rundeck_users
