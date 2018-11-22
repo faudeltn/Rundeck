@@ -18,6 +18,9 @@ for:
   job:
     - allow: [read,run,kill]
   node:
+    - match:
+        nodename: 'YLCWSRV02'
+      allow: [read,run] # allow read/run for the node YLCWSRV02
     - allow: [read,run] # allow read/run for nodes
 ---
 context:
