@@ -1,0 +1,41 @@
+description: "Allow users in Windows_Test group to run, kill jobs, etc. in the project called Windows_Test"
+# They can also read the activity logs and view the nodes.
+context:
+  project: 'Windows_Test'
+by:
+  group: Windows_Test
+for:
+  resource:
+    - equals:
+        kind: job
+      allow: [read, run, kill]
+    - equals:
+        kind: node
+      allow: [read]
+    - equals:
+        kind: event
+      allow: [read] # allow reading activity logs
+  job:
+    - allow: [read,run,kill]
+  node:
+    - allow: [read,run] # allow read/run for nodes
+---
+context:
+  application: rundeck
+description: "Users in the 'rundeck_users' group can launch jobs in the project called Windows_Test but not edit them"
+for:
+  project:
+    - match:
+        name: 'Windows_Test'
+      allow: [read]
+  system:
+    - match:
+        name: '.*'
+      allow: [read]
+  storage:
+    - equals:
+        path: 'keys/yl07.password'
+      allow: [read]
+by:
+  group:
+    - Windows_Test
