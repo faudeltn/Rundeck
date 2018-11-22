@@ -21,7 +21,7 @@ for:
     - match:
         nodename: 'YLCWSRV02'
       allow: [read,run] # allow read/run for the node YLCWSRV02
-    - allow: [read,run] # allow read/run for nodes
+    #- allow: [read,run] # allow read/run for nodes
 ---
 context:
   application: rundeck
