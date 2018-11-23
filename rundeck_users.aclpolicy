@@ -1,4 +1,4 @@
-description: "Allow users in rundeck_users group to run, kill jobs, etc. in the project called specific-project-name"
+description: "Allow users in rundeck_users group to run, kill jobs, etc.
 # They can also read the activity logs and view the nodes.
 context:
   project: '.*'
@@ -27,7 +27,7 @@ for:
 ---
 context:
   application: rundeck
-description: "Users in the 'rundeck_users' group can launch jobs in the project called specific-project-name but not edit them"
+description: "Users in the 'rundeck_users' group can launch jobs
 for:
   project:
     - match:
