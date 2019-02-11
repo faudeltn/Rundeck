@@ -2,7 +2,7 @@
 
 
 
-- Create a <code>jaas-activedirectory.conf</code> #00ff00file as below:
+- Create a <code>jaas-activedirectory.conf</code> file as below:
 ```
 # vi /etc/rundeck/jaas-activedirectory.conf
   activedirectory {
@@ -87,4 +87,4 @@ chmod 640 /etc/rundeck/rundeck_users.aclpolicy
 
 Visit our website[YallaLabs](http://yallalabs.com/)
 
-<p style="color: #347E5E">#347E5E</p>
+
