@@ -64,4 +64,4 @@ chmod 640 /etc/rundeck/rundeck_administrators.aclpolicy
 chown rundeck:rundeck /etc/rundeck/rundeck_users.aclpolicy
 chmod 640 /etc/rundeck/rundeck_users.aclpolicy
 ```
-[GitHub Pages](https://pages.github.com/)
+[GitHub Pages](https://github.com/faudeltn/Rundeck/blob/master/rundeck_administrators.aclpolicy/)
