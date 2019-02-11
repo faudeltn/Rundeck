@@ -67,6 +67,7 @@ chmod 640 /etc/rundeck/rundeck_users.aclpolicy
 
 - Create the new roles by editing the file <code>/var/lib/rundeck/exp/webapp/WEB-INF/web.xml</code>
 ```
+# vi /var/lib/rundeck/exp/webapp/WEB-INF/web.xml
 <security-role>
                 <role-name>rundeck_administrators</role-name>
         </security-role>
@@ -77,11 +78,11 @@ chmod 640 /etc/rundeck/rundeck_users.aclpolicy
 
 - Finally restart the Rundeck daemon:
 ```
-systemctl restart rundeckd
+# systemctl restart rundeckd
 ```
 - To check the log file of rundeck use the below command:
 ```
-tail -f /var/log/rundeck/service.log
+# tail -f /var/log/rundeck/service.log
 ```
 
 Visit our website[YallaLabs](http://yallalabs.com/)
