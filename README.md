@@ -64,7 +64,6 @@ chmod 640 /etc/rundeck/rundeck_administrators.aclpolicy
 chown rundeck:rundeck /etc/rundeck/rundeck_users.aclpolicy
 chmod 640 /etc/rundeck/rundeck_users.aclpolicy
 ```
-[rundeck_userss.aclpolicy](https://github.com/faudeltn/Rundeck/blob/master/rundeck_users.aclpolicy/)
 
 - Create the new roles by editing the file <code>/var/lib/rundeck/exp/webapp/WEB-INF/web.xml</code>
 ```
@@ -85,5 +84,5 @@ systemctl restart rundeckd
 tail -f /var/log/rundeck/service.log
 ```
 
-
+Visit our website[YallaLabs](http://yallalabs.com/)
 
