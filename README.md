@@ -65,3 +65,25 @@ chown rundeck:rundeck /etc/rundeck/rundeck_users.aclpolicy
 chmod 640 /etc/rundeck/rundeck_users.aclpolicy
 ```
 [rundeck_userss.aclpolicy](https://github.com/faudeltn/Rundeck/blob/master/rundeck_users.aclpolicy/)
+
+- Create the new roles by editing the file <code>/var/lib/rundeck/exp/webapp/WEB-INF/web.xml</code>
+```
+<security-role>
+                <role-name>rundeck_administrators</role-name>
+        </security-role>
+        <security-role>
+                <role-name>rundeck_users</role-name>
+        </security-role>
+```
+
+- Finally restart the Rundeck daemon:
+```
+systemctl restart rundeckd
+```
+- To check the log file of rundeck use the below command:
+```
+tail -f /var/log/rundeck/service.log
+```
+
+
+
