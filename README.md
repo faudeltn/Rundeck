@@ -34,4 +34,19 @@
 # chmod 640 /etc/rundeck/jaas-activedirectory.conf
 ```
 
+- Modify the <code>/etc/rundeck/profile</code> as below:
 
+Before
+```
+
+RDECK_JVM="-Djava.security.auth.login.config=$JAAS_CONF \
+           -Dloginmodule.name=$LOGIN_MODULE \
+
+```
+After
+```
+
+RDECK_JVM="-Djava.security.auth.login.config=/etc/rundeck/jaas-activedirectory.conf \
+           -Dloginmodule.name=activedirectory \
+
+```
