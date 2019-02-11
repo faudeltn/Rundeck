@@ -58,7 +58,7 @@ chown rundeck:rundeck /etc/rundeck/rundeck_administrators.aclpolicy
 chmod 640 /etc/rundeck/rundeck_administrators.aclpolicy
 ```
 
-- Create the [rundeck_userss.aclpolicy](https://github.com/faudeltn/Rundeck/blob/master/rundeck_users.aclpolicy/) and change the ownership to the rundeck user as below
+- Create the [rundeck_users.aclpolicy](https://github.com/faudeltn/Rundeck/blob/master/rundeck_users.aclpolicy/) and change the ownership to the rundeck user as below
 ```
 # vi /etc/rundeck/rundeck_users.aclpolicy
 chown rundeck:rundeck /etc/rundeck/rundeck_users.aclpolicy
