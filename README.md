@@ -2,7 +2,7 @@
 
 
 
-- Create a <code>jaas-activedirectory.conf</code> file as below:
+- Create a <code>jaas-activedirectory.conf</code> #00ff00file as below:
 ```
 # vi /etc/rundeck/jaas-activedirectory.conf
   activedirectory {
