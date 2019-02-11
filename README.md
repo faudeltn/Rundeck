@@ -3,7 +3,7 @@
 
 
 - Create a <code>jaas-activedirectory.conf</code> file as below:
-<code>
+```
 # vi /etc/rundeck/jaas-activedirectory.conf
   activedirectory {
     com.dtolabs.rundeck.jetty.jaas.JettyCachingLdapLoginModule required
@@ -26,12 +26,12 @@
     cacheDurationMillis="300000"
     reportStatistics="true";
 };
-</code>
+```
 
 - Change the ownership of the file and set up the correct permission:
-<code>
+```
 # chown rundeck:rundeck /etc/rundeck/jaas-activedirectory.conf
 # chmod 640 /etc/rundeck/jaas-activedirectory.conf
-</code>
+```
 
 
