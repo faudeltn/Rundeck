@@ -51,7 +51,7 @@ RDECK_JVM="-Djava.security.auth.login.config=/etc/rundeck/jaas-activedirectory.c
 
 ```
 
-- Create the [rundeck_administrators.aclpolicy] (https://github.com/faudeltn/Rundeck/blob/master/rundeck_administrators.aclpolicy)and change the ownership to the rundeck user as below
+- Create the [rundeck_administrators.aclpolicy] (https://github.com/faudeltn/Rundeck/blob/master/rundeck_administrators.aclpolicy) and change the ownership to the rundeck user as below
 ```
 # vi /etc/rundeck/rundeck_administrators.aclpolicy
 chown rundeck:rundeck /etc/rundeck/rundeck_administrators.aclpolicy
