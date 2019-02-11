@@ -1,0 +1,52 @@
+description: Standard Users project level access control. Applies to resources within a specific project.
+context:
+  project: '.*' # all projects
+for:
+  resource:
+    - equals:
+        kind: job
+      allow: [read] # allow read jobs
+    - equals:
+        kind: node
+      allow: [read] # allow refresh node sources
+    - equals:
+        kind: event
+      allow: [read] # allow read/read events
+  adhoc:
+    - allow: [read] # allow read adhoc jobs
+  job:
+    - allow: [read] # allow read of all jobs
+  node:
+    - allow: [read] # allow read for nodes
+by:
+  group: rundeck_users
+ 
+---
+ 
+description: Admin Application level access control, applies to creating/deleting projects, admin of user profiles, viewing projects and reading system information.
+context:
+  application: 'rundeck'
+for:
+  resource:
+    - equals:
+        kind: project
+      allow: [read] # allow read of projects
+    - equals:
+        kind: system
+      allow: [read] # allow read executions
+    - equals:
+        kind: system_acl
+      allow: [read] # allow reading system ACL files
+  project:
+    - match:
+        name: '.*'
+      allow: [read] # allow read access of all projects or use 'admin'
+  project_acl:
+    - match:
+        name: '.*'
+      allow: [read] # allow reading project-specific ACL files
+  storage:
+    - allow: [read] # allow read access for /ssh-key/* storage content
+ 
+by:
+  group: rundeck_users
